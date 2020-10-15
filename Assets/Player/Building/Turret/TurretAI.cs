@@ -28,20 +28,24 @@ public class TurretAI : EntityClass
         // Grab target variable
         TriangleAI target = TriangleAI.FindNearest(transform.position);
 
-        // Rotate turret towards target
-        Vector2 lookDirection = target.position - turret.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        turret.rotation = angle;
+        if (target != null) {
+            // Rotate turret towards target
+            Vector2 lookDirection = target.position - turret.position;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+            turret.rotation = angle;
 
-        // Shoot bullet
-        if (nextFire > 0)
-        {
-            nextFire -= Time.deltaTime;
-            return;
+            // Shoot bullet
+            if (nextFire > 0)
+            {
+                nextFire -= Time.deltaTime;
+                return;
+            }
+
+            // Call shoot function
+            Shoot();
         }
 
-        // Call shoot function, update cooldown
-        Shoot();
+        // Update cooldown
         Cooldown();
     }
 
