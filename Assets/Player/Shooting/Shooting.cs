@@ -9,6 +9,7 @@ public class Shooting : Player
     private GameObject BuildSystem;
     private GameObject BuildObject;
     private Vector2 mousePosition;
+    private Vector2 mouseDirection;
 
     // Base player variables
     public Transform firePoint;
@@ -21,6 +22,12 @@ public class Shooting : Player
     protected float nextFire = -1f;
     protected float bulletForce = 20f;
     protected int offset = 0;
+
+    void Start()
+    {
+        // Init mouse location and direction vars
+        updateMouseDirection();
+    }
 
     // Firing system
     void Update()
@@ -41,7 +48,7 @@ public class Shooting : Player
         if (Input.GetKeyDown(KeyCode.F) && BuildMode == false)
         {
             // Get mouse position and round to middle grid coordinate
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            updateMousePosition();
             BuildObject = Instantiate(BuildSystem, mousePosition, Quaternion.identity);
             BuildMode = true;
         }
@@ -69,9 +76,8 @@ public class Shooting : Player
     // Add recoil to player
     void Recoil()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.Normalize();
-        player.AddForce((player.position - mousePosition) * 3f);
+        updateMouseDirection();
+        player.AddForce(mouseDirection * -7f);
     }
 
     // Bullet cooldown when holding
@@ -87,6 +93,20 @@ public class Shooting : Player
             v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
             v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta)
         );
+    }
+
+    // Update the stored location of the mouse
+    private void updateMousePosition() 
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    // Update the normalized vector of where the mouse is
+    public void updateMouseDirection() {
+        updateMousePosition();
+        mouseDirection = mousePosition;
+        Debug.Log(mouseDirection.ToString());
+        mouseDirection.Normalize();
     }
 }
 
