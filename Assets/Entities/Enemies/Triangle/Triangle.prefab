@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8843238329060479373}
   - component: {fileID: -1895247207214662685}
   - component: {fileID: 9218725160157042262}
-  - component: {fileID: 2980636714085514378}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Enemy
@@ -97,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee92f32230fc3041966251ebd96c7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   effect: {fileID: 7050970385817730975, guid: 488f4063d72db284cb7dc12462e1bce7, type: 3}
+  moveSpeed: 5
 --- !u!61 &-1895247207214662685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,17 +145,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2980636714085514378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6065519297016329530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee92f32230fc3041966251ebd96c7de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  effect: {fileID: 0}
