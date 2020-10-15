@@ -106,7 +106,6 @@ public class Shooting : Player
     public void updateMouseDirection() {
         updateMousePosition();
         mouseDirection = mousePosition;
-        Debug.Log(mouseDirection.ToString());
         mouseDirection.Normalize();
     }
 }
