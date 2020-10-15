@@ -22,11 +22,6 @@ public class Shooting : Player
     protected float bulletForce = 20f;
     protected int offset = 0;
 
-    void Start()
-    {
-        
-    }
-
     // Firing system
     void Update()
     {
@@ -86,7 +81,7 @@ public class Shooting : Player
     }
 
     // Rotation function
-    public static Vector2 rotate(Vector2 v, float delta)
+    private static Vector2 rotate(Vector2 v, float delta)
     {
         return new Vector2(
             v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
