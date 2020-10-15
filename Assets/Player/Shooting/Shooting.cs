@@ -14,7 +14,7 @@ public class Shooting : Player
     // Base player variables
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public ParticleSystem hitEffect;
+    public ParticleSystem shootEffect;
 
     // Default weapon variables
     protected float thrust = 1.0f;
@@ -67,6 +67,7 @@ public class Shooting : Player
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(shootEffect, firePoint.position, Quaternion.identity);
         bullet.transform.Rotate(0, 0, offset);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(rotate(firePoint.up, Random.Range(-0.1f, 0.1f)) * bulletForce, ForceMode2D.Impulse);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.Tracing;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        player = this.GetComponent<Rigidbody2D>();
+        if (this.GetComponent<Rigidbody2D>() != null)
+        {
+            player = this.GetComponent<Rigidbody2D>();
+        }
     }
 }

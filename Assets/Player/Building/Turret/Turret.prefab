@@ -71,7 +71,7 @@ MonoBehaviour:
   firePoint: {fileID: 3069989843565101140}
   bulletPrefab: {fileID: 5680003555318415523, guid: 19228ddec27f32342adeda3697420164,
     type: 3}
-  hitEffect: {fileID: 7866703065207308241, guid: 16792af90bce0d749915131bb4d70ca3,
+  shootEffect: {fileID: 748610589644146384, guid: 3748b91671c54134b8a7dbc12c8779e9,
     type: 3}
 --- !u!1 &2486580617777674227
 GameObject:
@@ -195,7 +195,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2486580618322720435}
   - component: {fileID: 2486580618322720444}
-  - component: {fileID: 2954231510396716557}
   m_Layer: 9
   m_Name: MGBase
   m_TagString: Untagged
@@ -267,21 +266,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2954231510396716557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486580618322720445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c19de70c288a514d8c821ca590ff202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  hitEffect: {fileID: 0}
 --- !u!1 &9215428734190905872
 GameObject:
   m_ObjectHideFlags: 0

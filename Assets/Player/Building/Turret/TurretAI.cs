@@ -5,6 +5,7 @@ public class TurretAI : EntityClass
 
     // Turret object information
     private Rigidbody2D turret;
+    Quaternion targetRotation = Quaternion.identity;
 
     // Default weapon variables
     protected float thrust = 1.0f;
@@ -16,8 +17,8 @@ public class TurretAI : EntityClass
     // Base weapon objects
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public ParticleSystem hitEffect;
-    
+    public ParticleSystem shootEffect;
+
     void Start()
     {
         turret = this.GetComponent<Rigidbody2D>();
@@ -53,6 +54,7 @@ public class TurretAI : EntityClass
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(shootEffect, firePoint.position, Quaternion.identity);
         bullet.transform.Rotate(0, 0, offset);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(rotate(firePoint.up, Random.Range(-0.1f, 0.1f)) * bulletForce, ForceMode2D.Impulse);
