@@ -68,7 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c19de70c288a514d8c821ca590ff202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 3069989843565101140}
+  firePoint: {fileID: 3069989843565101140}
+  bulletPrefab: {fileID: 5680003555318415523, guid: 19228ddec27f32342adeda3697420164,
+    type: 3}
+  hitEffect: {fileID: 7866703065207308241, guid: 16792af90bce0d749915131bb4d70ca3,
+    type: 3}
 --- !u!1 &2486580617777674227
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c19de70c288a514d8c821ca590ff202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!1 &9215428734190905872
 GameObject:
   m_ObjectHideFlags: 0
